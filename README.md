@@ -12,8 +12,9 @@
 ---
 1. `python==3.8.9`
 2. `django==2.2`
+3. `djangorestframework==3.13.1`
 4. `graphene==2.1.8`
-
+5. `sphinx`
 ## Установка
 
 ---
@@ -31,7 +32,7 @@
     * `.env` в каталог:`CodingTeam/api/`:
    
     ```
-   SECRET_KEY = '7nvd^ezxpewn08bo$os3_yala-0xx=79h*@p+*0fn2k$6wnexu'
+   SECRET_KEY = ''
     ```
    
    * `config.ini` в каталог:`CodingTeam/api/server/server/`
@@ -66,7 +67,7 @@ $ Прервать процесс нажатием (Ctrl + C)
 
 ## Документация
 
-1. Перейти в каталог `api/docs/`
+1. Перейти в каталог `CodingTeam/docs/`
 2. Открыть файл `_build/html/index.html`
 
 **Обновление документации:**
@@ -86,18 +87,4 @@ $ Прервать процесс нажатием (Ctrl + C)
 ## Тестирование
 
 ---
-**Примечание** Запуск тестов, например из каталога: `itresume/api/dev/server/`
-
-1. Проверка приватности задач:
-```bash
-   $(env_name) python tests/problems/private_problem_test.py
-```
-2. Создание userCV:
-```bash
-   $(env_name) python tests/cv/module_test.py
-```
-3. Тестирование Блога с помощью pytest:
-```bash
-   $type = <localhost | dev | debug | prod>
-   $(env_name) pytest autotests/blog/tests_article_list.py --server_type $type 
-```
+**feature**
