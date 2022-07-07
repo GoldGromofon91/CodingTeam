@@ -1,0 +1,26 @@
+food_categories = """
+query{
+  foodCategories{
+    id,
+    nameRu,
+    nameEn,
+    nameCh
+    foods{
+      id,
+      nameRu,
+      internalCode,
+      code,
+      cost,
+      additional{
+        id
+      }
+      descriptionRu,
+      descriptionEn,
+      descriptionCh
+      isVegan,
+      isSpecial,
+      isPublish,
+    }
+  }
+}
+"""
