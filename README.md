@@ -56,11 +56,25 @@
 $(env) python manage.py migrate
 ```
 
----
+### Заполнение БД
+После установки миграций, необходимо заполнить тестовыми данными БД, для этого
+в папке проекта (например `CodingTeam/api/server/`):
+```bash
+$(env) python manage.py fill_db
+```
+
 ### Запуск сервера
 В папке проекта (например `CodingTeam/api/server/`):
 ```bash
 $(env) python manage.py runserver
+```
+
+### Проверка endpoint:
+Для проверки работоспособности перейти на следующие url's:
+
+```
+   http://127.0.0.1:8080/api/v1/foods/ - для проверки DRF
+   http://127.0.0.1:8080/api/graphql/ - для проверки GraphQl
 ```
 
 ### Остановка сервера
