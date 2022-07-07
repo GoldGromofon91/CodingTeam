@@ -1,4 +1,5 @@
-# CodingTeam (Задание)
+# CodingTeam ([Задание](https://gist.github.com/ir0nfelix/88095feccf59824a60deb0ddb3aa3f29))
+
 
 1. [Требования](#Требования)
 2. [Установка](#Установка)
@@ -7,7 +8,7 @@
 5. [Тестирование](#Тестирование)
 6. [Документация](#Документация)
 
-## Требования
+## Требования 
 
 ---
 1. `python==3.8.9`
@@ -15,6 +16,7 @@
 3. `djangorestframework==3.13.1`
 4. `graphene==2.1.8`
 5. `sphinx`
+
 ## Установка
 
 ---
@@ -22,39 +24,48 @@
 1. [Руководство по настройке PYENV](https://github.com/pyenv/pyenv)
 
 ### Зависимости
+
 1. После настройки виртуального окружения устанавливаем зависимости из `requirements.txt`
     ```bash
-    $(server) pip install -r requirements.txt
+    $(env) pip install -r requirements.txt
     ```
    
-
 2. Перед запуском проекта необходимо добавить следующие файлы:
     * `.env` в каталог:`CodingTeam/api/`:
    
     ```
-   SECRET_KEY = ''
+   SECRET_KEY = 'ug2c+o7(8=bjpv1m*s=y7e$n*0k)79ubd()_)*@vvvg#n$76ne'
     ```
    
    * `config.ini` в каталог:`CodingTeam/api/server/server/`
     ```
    [Manage]
-   PORT = 8000
+   PORT = 8080
    [DEBUG]
+   STATUS = True
+   [GRAPHQL]
    STATUS = True
     ```
 
 ## Команды
+---
+### Миграции
+После скачивания репозитория, необходимо применить миграции проекта и приложений
+В папке проекта (например `CodingTeam/api/server/`):
+```bash
+$(env) python manage.py migrate
+```
 
 ---
 ### Запуск сервера
 В папке проекта (например `CodingTeam/api/server/`):
 ```bash
-$(server) python manage.py runserver
+$(env) python manage.py runserver
 ```
 
 ### Остановка сервера
 
-В папке проекта (например `itresume/api/dev/server/`):
+В папке проекта (например `CodingTeam/api/server/`):
 ```bash
 $ Прервать процесс нажатием (Ctrl + C)
 ```
@@ -70,21 +81,12 @@ $ Прервать процесс нажатием (Ctrl + C)
 1. Перейти в каталог `CodingTeam/docs/`
 2. Открыть файл `_build/html/index.html`
 
-**Обновление документации:**
-
-В случае обновления `docstrings`, приложений проекта, или же самой структуры `sphinx-docs`
-**требуется обновление итогового файла**:
-
-1. Проверить наличие [sphinx](https://pypi.org/project/Sphinx/) в ``env``, выполнить
-   ```bash
-   (env) pip install sphinx
-   ```
-2. В директории `api/docs/` выполнить
-   ```bash
-   (env) make html
-   ```
 
 ## Тестирование
 
 ---
-**feature**
+Для запуска тестов в папке проекта (например `CodingTeam/api/server/`):
+
+```bash
+$(env) pytest
+```
