@@ -3,6 +3,9 @@
 import os
 import sys
 
+from server.settings import PORT
+from django.core.management.commands.runserver import Command as runserver
+
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
@@ -18,4 +21,6 @@ def main():
 
 
 if __name__ == '__main__':
+    runserver.default_port = PORT['PORT']
     main()
+
